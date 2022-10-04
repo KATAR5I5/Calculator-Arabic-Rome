@@ -3,7 +3,7 @@ public class MainCalcularot {
 // объект ввода с клавиатуры
         InputKeyboard inputKeyboard = new InputKeyboard();
         String[] inputArrayOperands = inputKeyboard.getArrayOperands(); // Массив операндов из Веденной с клавиатуры строки 
-        //Output
+
         System.out.println(calc(inputArrayOperands));
     }
 
