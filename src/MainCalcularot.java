@@ -1,10 +1,8 @@
 public class MainCalcularot {
     public static void main(String[] arg) throws Exception {
-// объект ввода с клавиатуры
+//        объект ввода с клавиатуры
         InputKeyboard inputKeyboard = new InputKeyboard();
-
-
-        // Массив операндов из Веденной с клавиатуры строки
+//        Массив операндов из Веденной с клавиатуры строки
         String[] inputArrayOperands = inputKeyboard.getArrayOperands();
         System.out.println(calc(inputArrayOperands));
     }
@@ -30,7 +28,7 @@ public class MainCalcularot {
             firstNumInt = Integer.parseInt(firstNumStr);  // может быть не число
             secondNumInt = Integer.parseInt(secondNumStr); // может быть не число
 
-            //    Объект арифметических действий с арабскими числами
+//            Объект арифметических действий с арабскими числами
             ArabicCalculate arabicCalculator = new ArabicCalculate(firstNumInt, secondNumInt, sign);
             return arabicCalculator.result;
 
@@ -44,7 +42,7 @@ public class MainCalcularot {
                 } catch (Exception e1) {
                     return "throws Exception //Операнд находится за пределами от 1 до 10 включительно.";
                 }
-//    новый Объект арифметических действий с арабскими числами для римских
+//                новый Объект арифметических действий с арабскими числами для римских
                 ArabicCalculate arabicCalculator = new ArabicCalculate(firstNumInt, secondNumInt, sign);
                 int arabicNumRome = Integer.parseInt(arabicCalculator.result);
                 if (arabicNumRome <= 0) {
@@ -62,14 +60,14 @@ public class MainCalcularot {
         }
     }
 
-    //    Метод перевода римского числа в арабское число
+//        Метод перевода римского числа в арабское число
     static int getRomeNumber(String name) {
         RomeNumber rn = RomeNumber.valueOf(RomeNumber.class, name); // возвращаем объект совпадающис со строкой name
         int n = rn.ordinal(); // получаем индекс объекта
         return n;
     }
 
-    //    Метод перевода арабского числа в римское
+//        Метод перевода арабского числа в римское
     static String romeName(int a) {
         for (RomeNumber element : RomeNumber.values()) {
             if (element.getNumber() == a)
