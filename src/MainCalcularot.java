@@ -6,7 +6,6 @@ public class MainCalcularot {
         String[] inputArrayOperands = inputKeyboard.getArrayOperands();
         System.out.println(calc(inputArrayOperands));
     }
-
     public static String calc(String[] input) throws Exception {
         try {
             if (input.length >= 4)
@@ -59,14 +58,12 @@ public class MainCalcularot {
             }
         }
     }
-
 //        Метод перевода римского числа в арабское число
     static int getRomeNumber(String name) {
         RomeNumber rn = RomeNumber.valueOf(RomeNumber.class, name); // возвращаем объект совпадающис со строкой name
         int n = rn.ordinal(); // получаем индекс объекта
         return n;
     }
-
 //        Метод перевода арабского числа в римское
     static String romeName(int a) {
         for (RomeNumber element : RomeNumber.values()) {
