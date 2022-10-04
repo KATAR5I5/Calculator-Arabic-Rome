@@ -2,8 +2,8 @@ public class MainCalcularot {
     public static void main(String[] arg) throws Exception {
 // объект ввода с клавиатуры
         InputKeyboard inputKeyboard = new InputKeyboard();
-        String[] inputArrayOperands = inputKeyboard.getArrayOperands(); // Массив операндов из Веденной с клавиатуры строки 
-
+        // Массив операндов из Веденной с клавиатуры строки
+        String[] inputArrayOperands = inputKeyboard.getArrayOperands();
         System.out.println(calc(inputArrayOperands));
     }
 
