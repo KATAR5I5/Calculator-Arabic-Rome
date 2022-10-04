@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class InputKeyboard {
-    String [] s;
+    private String [] arrayOperands;
 
     InputKeyboard() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -22,10 +22,13 @@ public class InputKeyboard {
             System.out.println("Результат выражения");
             // проверка на пустоту и соответствие
         }
-        s = new String[3];
-        s[0] = matcher.group(1).toUpperCase();
-        s[1] = matcher.group(2);
-        s[2] = matcher.group(3).toUpperCase();
+        arrayOperands = new String[3];
+        arrayOperands[0] = matcher.group(1).toUpperCase();
+        arrayOperands[1] = matcher.group(2);
+        arrayOperands[2] = matcher.group(3).toUpperCase();
+    }
 
+    public String[] getArrayOperands() {
+        return arrayOperands;
     }
 }

@@ -2,31 +2,28 @@ public class MainCalcularot {
     public static void main(String[] arg) throws Exception {
 // объект ввода с клавиатуры
         InputKeyboard inputKeyboard = new InputKeyboard();
-        String [] inputString = inputKeyboard.s; // Веденная с клавиатуры строка UpperCase
+        String[] inputArrayOperands = inputKeyboard.getArrayOperands(); // Массив операндов из Веденной с клавиатуры строки 
         //Output
-        System.out.println(calc(inputString));
+        System.out.println(calc(inputArrayOperands));
     }
 
-    public static String calc(String [] input) throws Exception {
-
-
-        String[] strings = input;  // Массив операндов
+    public static String calc(String[] input) throws Exception {
         try {
-            if (strings.length >= 4)
+            if (input.length >= 4)
                 throw new Exception();
         } catch (Exception e) {
             return "throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)";
         }
         try {
-            if (strings.length < 3)
+            if (input.length < 3)
                 throw new Exception();
         } catch (Exception e4) {
             return "throws Exception //т.к. строка не является математической операцией";
         }
         int firstNumInt, secondNumInt;
-        String firstNumStr = strings[0];
-        String secondNumStr = strings[2];
-        String sign = strings[1];
+        String firstNumStr = input[0];
+        String secondNumStr = input[2];
+        String sign = input[1];
         try {
             firstNumInt = Integer.parseInt(firstNumStr);  // может быть не число
             secondNumInt = Integer.parseInt(secondNumStr); // может быть не число
