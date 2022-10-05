@@ -1,5 +1,5 @@
 public class MathClass {
-    int firstNumInt, secondNumInt;
+   private int firstNumInt, secondNumInt;
 
     public String calc(String[] input) {
         String firstNumStr = input[0];
@@ -55,14 +55,14 @@ public class MathClass {
     }
 
     //            Метод перевода римского числа в арабское число
-    int getRomeNumber(String name) {
+    private int getRomeNumber(String name) {
         RomeNumber rn = RomeNumber.valueOf(RomeNumber.class, name); // возвращаем объект совпадающис со строкой name
         int n = rn.ordinal(); // получаем индекс объекта
         return n;
     }
 
     //            Метод перевода арабского числа в римское
-    String romeName(int a) {
+    private String romeName(int a) {
         for (RomeNumber element : RomeNumber.values()) {
             if (element.getNumber() == a)
                 return element.toString();
