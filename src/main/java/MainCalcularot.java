@@ -1,9 +1,14 @@
+import java.net.URL;
 import java.util.Date;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class MainCalcularot extends Application {
@@ -23,24 +28,49 @@ public class MainCalcularot extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Calculator");
+
+        FXMLLoader loader = new FXMLLoader();
+        URL xmlUrl = getClass().getResource("/mainScene.fxml");
+        loader.setLocation(xmlUrl);
+        loader.setController(new MainSceneController());
+//        MainSceneController controller = loader.getController();
+        Parent root = loader.load();
+
+
+        primaryStage.setTitle("Калькулятор Римских и Арабских чисел");
         primaryStage.setWidth(700);
         primaryStage.setHeight(400);
-        Button button = new Button("Calculate!");
-        button.setOnAction(e -> {
+        primaryStage.setResizable(false);
+//        Label labeleOne = new Label("Calc");
+//        labeleOne.setAlignment(Pos.CENTER);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Результат выражения: " + MainCalcularot.m());
-
-            alert.showAndWait();
-        });
-        Scene primaryScene = new Scene(button);
-        primaryStage.setScene(primaryScene);
-
-
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
 
+
+
+
+//        Button button = new Button("Calculate!");
+//        button.setOnAction(e -> {
+//
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Результат выражения: " + MainCalcularot.m());
+//
+//            alert.showAndWait();
+//        });
+//        Scene primaryScene = new Scene(labeleOne);
+//        primaryStage.setScene(primaryScene);
+//
+//
+//        primaryStage.show();
+
+
     }
+//    public class MainSceneController {
+//        public void buttonClicked() {
+//            System.out.println("Button clicked!");
+//        }
+//    }
 
     public static String m() {
         InputKeyboard inputKeyboard = new InputKeyboard();
