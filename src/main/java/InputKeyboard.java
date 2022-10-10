@@ -17,7 +17,7 @@ public class InputKeyboard {
                 input = bufferedReader.readLine().trim();
                 matcher = pattern.matcher(input);
             }
-                // проверка на пустоту и соответствие
+            // проверка на пустоту и соответствие
             while (input.isEmpty() || !matcher.find());
             {
                 System.out.println("Результат выражения");
@@ -28,6 +28,25 @@ public class InputKeyboard {
         arrayOperands[0] = matcher.group(1).toUpperCase();
         arrayOperands[1] = matcher.group(2);
         arrayOperands[2] = matcher.group(3).toUpperCase();
+        System.out.println("jhkj");
+    }
+
+    InputKeyboard(String input1) {
+        String input = input1.trim();
+        Pattern pattern = Pattern.compile("(\\w+)\\s*(\\W)\\s*(\\w+)");
+        Matcher matcher = pattern.matcher(input);
+
+        // проверка на пустоту и соответствие
+//        while (input.isEmpty() || !matcher.find()) ;
+//        {
+////        System.out.println("Результат выражения");
+//        }
+        System.out.println(input);
+        if(matcher.find()) {
+            arrayOperands[0] = matcher.group(1).toUpperCase();
+            arrayOperands[1] = matcher.group(2);
+            arrayOperands[2] = matcher.group(3).toUpperCase();
+        }
     }
 
     public String[] getArrayOperands() {
